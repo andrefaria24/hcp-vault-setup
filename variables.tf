@@ -20,7 +20,7 @@ variable "HCP_VAULT_CLUSTER_TIER" {
   type    = string
 
   validation {
-    condition     = contains(["dev", "starter_small", "standard_small", "plus_small"], var.VAULT_CLUSTER_TIER)
+    condition     = contains(["dev", "starter_small", "standard_small", "plus_small"], var.HCP_VAULT_CLUSTER_TIER)
     error_message = "The tier must be dev, starter_small, standard_small, or plus_small."
   }
 }
