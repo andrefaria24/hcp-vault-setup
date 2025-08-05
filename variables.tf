@@ -42,7 +42,3 @@ variable "HCP_VAULT_CLUSTER_PUBLIC_ENDPOINT" {
     error_message = "The Cluster Public Endpoint value must be either true or false"
   }
 }
-
-variable "ALLOWED_IP" {
-  type = string
-}
