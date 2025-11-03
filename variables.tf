@@ -1,23 +1,23 @@
 variable "HCP_CLIENT_ID" {
-    type = string
-    sensitive = true
+  type      = string
+  sensitive = true
 }
 
 variable "HCP_CLIENT_SECRET" {
-    type = string
-    sensitive = true
+  type      = string
+  sensitive = true
 }
 
 variable "HCP_HVN_ID" {
-    type = string
+  type = string
 }
 
-variable HCP_VAULT_CLUSTER_ID {
-    type = string
+variable "HCP_VAULT_CLUSTER_ID" {
+  type = string
 }
 
 variable "HCP_VAULT_CLUSTER_TIER" {
-  type    = string
+  type = string
 
   validation {
     condition     = contains(["dev", "starter_small", "standard_small", "plus_small"], var.HCP_VAULT_CLUSTER_TIER)
@@ -25,8 +25,8 @@ variable "HCP_VAULT_CLUSTER_TIER" {
   }
 }
 
-variable "HCP_VAULT_CLUSTER_PROXY_ENDPOINT"  {
-  type    = string
+variable "HCP_VAULT_CLUSTER_PROXY_ENDPOINT" {
+  type = string
 
   validation {
     condition     = contains(["ENABLED", "DISABLED"], var.HCP_VAULT_CLUSTER_PROXY_ENDPOINT)
@@ -35,7 +35,7 @@ variable "HCP_VAULT_CLUSTER_PROXY_ENDPOINT"  {
 }
 
 variable "HCP_VAULT_CLUSTER_PUBLIC_ENDPOINT" {
-  type    = bool
+  type = bool
 
   validation {
     condition     = contains([true, false], var.HCP_VAULT_CLUSTER_PUBLIC_ENDPOINT)
