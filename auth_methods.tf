@@ -2,6 +2,11 @@
 resource "vault_auth_backend" "userpass" {
   type        = "userpass"
   description = "Enable userpass authentication managed by Terraform"
+
+  tune {
+    default_lease_ttl = "8h"
+    max_lease_ttl     = "24h"
+  }
 }
 
 # Create a user with admin policy assigned
