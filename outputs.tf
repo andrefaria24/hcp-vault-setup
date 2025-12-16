@@ -15,7 +15,7 @@ output "vault_region" {
 }
 
 output "vault_version" {
-  value = hcp_vault_cluster.main.version
+  value = hcp_vault_cluster.main.vault_version
 }
 
 output "vault_org_id" {
