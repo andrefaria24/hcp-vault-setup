@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~>1.12.0"
+  required_version = "~> 1.14.0"
 
   cloud {
     organization = "acfaria-hashicorp"
@@ -12,7 +12,7 @@ terraform {
   required_providers {
     hcp = {
       source  = "hashicorp/hcp"
-      version = "0.109.0"
+      version = "0.111.0"
     }
   }
 }
