@@ -14,5 +14,10 @@ terraform {
       source  = "hashicorp/hcp"
       version = "0.111.0"
     }
+
+    vault = {
+      source = "hashicorp/vault"
+      version = "5.6.0"
+    }
   }
 }

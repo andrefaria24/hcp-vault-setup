@@ -11,3 +11,7 @@ resource "hcp_vault_cluster" "main" {
   proxy_endpoint  = var.HCP_VAULT_CLUSTER_PROXY_ENDPOINT
   public_endpoint = var.HCP_VAULT_CLUSTER_PUBLIC_ENDPOINT
 }
+
+resource "hcp_vault_cluster_admin_token" "admin" {
+  cluster_id = hcp_vault_cluster.main.cluster_id
+}
