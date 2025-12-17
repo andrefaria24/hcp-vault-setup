@@ -12,16 +12,30 @@ EOT
 resource "vault_policy" "vault_radar" {
   name   = "vault_radar"
   policy = <<EOT
+path "sys/namespaces" {
+  capabilities = ["list", "read"]
+}
+
+path "sys/mounts" {
+  capabilities = ["read"]
+}
+path "sys/internal/ui/mounts" {
+  capabilities = ["read"]
+}
+path "sys/internal/ui/mounts/*" {
+  capabilities = ["read"]
+}
+
 path "kvv2/data/*" {
   capabilities = ["create", "read", "update", "delete"]
 }
 
 path "kvv2/metadata/*" {
-  capabilities = ["create", "read", "update", "delete", "list"]
+  capabilities = ["list", "read", "create", "update", "delete"]
 }
 
-path "kvv2/metadata/" {
-  capabilities = ["list", "read"]
+path "kvv2/delete/*" {
+  capabilities = ["update"]
 }
 
 path "kvv2/undelete/*" {
@@ -42,14 +56,6 @@ path "auth/token/renew-self" {
 
 path "auth/token/revoke-self" {
   capabilities = ["update"]
-}
-
-path "sys/internal/ui/namespaces" {
-  capabilities = ["read"]
-}
-
-path "sys/internal/ui/namespaces/*" {
-  capabilities = ["read"]
 }
 EOT
 }
