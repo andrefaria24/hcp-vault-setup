@@ -10,7 +10,7 @@ EOT
 
 # Vault Radar policy
 resource "vault_policy" "vault_radar" {
-  name   = "vault_radar"
+  name   = "vault-radar"
   policy = <<EOT
 path "sys/namespaces" {
   capabilities = ["list", "read"]
