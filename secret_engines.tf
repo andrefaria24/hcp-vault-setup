@@ -25,9 +25,9 @@ resource "vault_mount" "database" {
 
 # Enable PKI secrets engine
 resource "vault_mount" "pki" {
-  path        = "pki-lab-local"
+  path        = "pki-lab-andrecfaria-com"
   type        = "pki"
-  description = "PKI secret engine mount for lab.local managed by Terraform"
+  description = "PKI secret engine mount for lab.andrecfaria.com managed by Terraform"
 
   default_lease_ttl_seconds = 315360000 # 10 years
   max_lease_ttl_seconds     = 315360000 # 10 years
